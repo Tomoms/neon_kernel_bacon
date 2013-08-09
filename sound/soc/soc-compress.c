@@ -247,8 +247,8 @@ static int soc_compr_free(struct snd_compr_stream *cstream)
 		} else {
 			rtd->pop_wait = 1;
 			queue_delayed_work(system_power_efficient_wq,
-				&rtd->delayed_work,
-				msecs_to_jiffies(rtd->pmdown_time));
+					   &rtd->delayed_work,
+					   msecs_to_jiffies(rtd->pmdown_time));
 		}
 	} else {
 		/* capture streams can be powered down now */
