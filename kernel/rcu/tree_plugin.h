@@ -1641,7 +1641,6 @@ static bool __rcu_cpu_has_nonlazy_callbacks(struct rcu_data *rdp)
 }
 
 #ifdef CONFIG_TREE_PREEMPT_RCU
-
 /*
  * Are there non-lazy RCU-preempt callbacks?  (There cannot be if there
  * is no RCU-preempt in the kernel.)
