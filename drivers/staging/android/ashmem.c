@@ -683,7 +683,6 @@ static int ashmem_cache_op(struct ashmem_area *asma,
 	}
 	cache_func((void *)asma->vm_start,
 			(void *)(asma->vm_start + asma->size));
-
 done:
 	up_read(&current->mm->mmap_sem);
 	if (ret)
