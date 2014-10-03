@@ -20,6 +20,11 @@
 #ifdef CONFIG_COMPAT
 #define COMPAT_ASHMEM_SET_SIZE		_IOW(__ASHMEMIOC, 3, compat_size_t)
 #define COMPAT_ASHMEM_SET_PROT_MASK	_IOW(__ASHMEMIOC, 5, unsigned int)
+
+#ifdef CONFIG_MSM_WATCHDOG_V2
+void msm_trigger_wdog_bite(void);
+#else
+static inline void msm_trigger_wdog_bite(void) { }
 #endif
 
 #endif
