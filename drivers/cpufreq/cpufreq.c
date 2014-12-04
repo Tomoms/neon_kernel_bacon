@@ -1506,6 +1506,9 @@ static unsigned int __cpufreq_get(struct cpufreq_policy *policy)
 	if (!policy)
 		return ret_freq;
 
+	if (!policy)
+		return ret_freq;
+
 	if (ret_freq && policy->cur &&
 		!(cpufreq_driver->flags & CPUFREQ_CONST_LOOPS)) {
 		/* verify no discrepancy between actual and
