@@ -312,8 +312,6 @@ do {									\
 	P(cpu_power);
 #endif
 #ifdef CONFIG_SCHED_HMP
-	P(mostly_idle_load);
-	P(mostly_idle_nr_run);
 	P(load_scale_factor);
 	P(capacity);
 	P(max_possible_capacity);
@@ -406,6 +404,7 @@ static void sched_debug_header(struct seq_file *m)
 	P(sysctl_sched_child_runs_first);
 	P(sysctl_sched_features);
 #ifdef CONFIG_SCHED_HMP
+	P(sched_mostly_idle_load);
 	P(sched_small_task);
 	P(sched_upmigrate);
 	P(sched_downmigrate);
