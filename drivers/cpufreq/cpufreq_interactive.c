@@ -59,6 +59,7 @@ struct cpufreq_interactive_cpuinfo {
 	struct rw_semaphore enable_sem;
 	int governor_enabled;
 	struct cpufreq_interactive_tunables *cached_tunables;
+	unsigned long *cpu_busy_times;
 };
 
 static DEFINE_PER_CPU(struct cpufreq_interactive_cpuinfo, cpuinfo);
