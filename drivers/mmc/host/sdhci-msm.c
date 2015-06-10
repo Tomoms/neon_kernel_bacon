@@ -2400,7 +2400,6 @@ void sdhci_msm_dump_pwr_ctrl_regs(struct sdhci_host *host)
 		readl_relaxed(msm_host->core_mem + CORE_PWRCTL_CTL));
 }
 
-
 static irqreturn_t sdhci_msm_pwr_irq(int irq, void *data)
 {
 	struct sdhci_host *host = (struct sdhci_host *)data;
