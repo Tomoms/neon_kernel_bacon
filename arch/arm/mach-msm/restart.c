@@ -95,6 +95,7 @@ static void set_dload_mode(int on)
 		dload_mode_enabled = on;
 	}
 }
+
 #ifndef CONFIG_MACH_OPPO
 static bool get_dload_mode(void)
 {
@@ -264,6 +265,14 @@ static void msm_restart_prepare(const char *cmd)
 		} else {
 			__raw_writel(0x77665501, restart_reason);
 		}
+
+#ifdef CONFIG_MSM_DLOAD_MODE
+	} else if (in_panic == 1) {
+		__raw_writel(0x77665505, restart_reason);
+		qpnp_pon_store_extra_reset_info(RESET_EXTRA_PANIC_REASON, 1);
+#endif
+	} else {
+		__raw_writel(0x77665501, restart_reason);
 	}
 
 	flush_cache_all();
