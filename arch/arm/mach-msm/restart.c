@@ -155,6 +155,7 @@ static bool get_dload_mode(void)
 {
 	return false;
 }
+
 #endif
 #endif
 
@@ -265,7 +266,6 @@ static void msm_restart_prepare(const char *cmd)
 		} else {
 			__raw_writel(0x77665501, restart_reason);
 		}
-
 #ifdef CONFIG_MSM_DLOAD_MODE
 	} else if (in_panic == 1) {
 		__raw_writel(0x77665505, restart_reason);
