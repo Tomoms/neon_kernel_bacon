@@ -19,4 +19,6 @@ obj-$(CONFIG_MEM_SHARE_QMI_SERVICE)		+= memshare/
 obj-y		+= socinfo.o
 
 obj-$(CONFIG_QCOM_EARLY_RANDOM)	+= early_random.o
+
 obj-$(CONFIG_STATE_NOTIFIER)	+= state_notifier.o
+obj-$(CONFIG_AUTOSMP)		+= autosmp.o
