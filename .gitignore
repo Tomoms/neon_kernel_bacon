@@ -44,6 +44,7 @@ modules.builtin
 /System.map
 /Module.markers
 /Module.symvers
+arch/arm/boot/compressed/bswapsdi2.S
 
 #
 # Debian directory (make deb-pkg)
