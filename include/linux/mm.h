@@ -1900,6 +1900,7 @@ static inline bool page_is_guard(struct page *page) { return false; }
 void __init setup_nr_node_ids(void);
 #else
 static inline void setup_nr_node_ids(void) {}
+#endif
 
 #ifdef CONFIG_PROCESS_RECLAIM
 struct reclaim_param {
