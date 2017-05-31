@@ -1296,6 +1296,7 @@ static void sdhci_set_clock(struct sdhci_host *host, unsigned int clock)
 {
 	int div = 0; /* Initialized for compiler warning */
 	int real_div = div, clk_mul = 1;
+	int present;
 	u16 clk = 0;
 	unsigned long timeout;
 	unsigned long flags;

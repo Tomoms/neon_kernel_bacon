@@ -254,7 +254,6 @@ void gen_pool_destroy(struct gen_pool *pool)
 		chunk = list_entry(_chunk, struct gen_pool_chunk, next_chunk);
 		list_del(&chunk->next_chunk);
 
-		start_bit = 0;
 		end_bit = chunk_size(chunk) >> order;
 		nbytes = sizeof(struct gen_pool_chunk) +
 				BITS_TO_LONGS(end_bit) * sizeof(long);
