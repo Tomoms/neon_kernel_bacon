@@ -1399,6 +1399,8 @@ static void mb_free_blocks(struct inode *inode, struct ext4_buddy *e4b,
 	if (WARN_ON(count == 0))
 		return;
 
+	if (WARN_ON(count == 0))
+		return;
 	BUG_ON(last >= (sb->s_blocksize << 3));
 	assert_spin_locked(ext4_group_lock_ptr(sb, e4b->bd_group));
 	mb_check_buddy(e4b);
