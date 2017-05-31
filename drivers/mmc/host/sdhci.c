@@ -1300,6 +1300,8 @@ static void sdhci_set_clock(struct sdhci_host *host, unsigned int clock)
 	unsigned long timeout;
 	unsigned long flags;
 
+	present = mmc_gpio_get_cd(host->mmc);
+
 	spin_lock_irqsave(&host->lock, flags);
 	if (clock && clock == host->clock)
 		goto ret;
@@ -1673,7 +1675,6 @@ static void sdhci_request(struct mmc_host *mmc, struct mmc_request *mrq)
 	 *     zero: cd-gpio is used, and card is removed
 	 *     one: cd-gpio is used, and card is present
 	 */
-	present = mmc_gpio_get_cd(host->mmc);
 	if (present < 0) {
 		/* If polling, assume that the card is always present. */
 		if (host->quirks & SDHCI_QUIRK_BROKEN_CARD_DETECTION)
