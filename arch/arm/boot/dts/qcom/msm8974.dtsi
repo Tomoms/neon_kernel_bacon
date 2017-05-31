@@ -1549,6 +1549,7 @@
 		clocks = <&clock_krait clk_l2_clk>;
 		governor = "cpufreq";
 		freq-tbl-khz =
+			<  268800 >,
 			<  300000 >,
 			<  345600 >,
 			<  422400 >,
@@ -1600,6 +1601,7 @@
 		cpubw-cpufreq {
 			target-dev = <&cpubw>;
 			cpu-to-dev-map =
+				<  268800  381 >,
 				<  300000  572 >,
 				<  422400 1144 >,
 				<  652800 1525 >,
@@ -1612,6 +1614,7 @@
 		cache-cpufreq {
 			target-dev = <&cache>;
 			cpu-to-dev-map =
+				<  268800  268800 >,
 				<  300000  300000 >,
 				<  422400  422400 >,
 				<  652800  499200 >,
@@ -1636,6 +1639,7 @@
 			 <&clock_krait clk_krait2_clk>,
 			 <&clock_krait clk_krait3_clk>;
 		qcom,cpufreq-table =
+			<  268800 >,
 			<  300000 >,
 			<  422400 >,
 			<  652800 >,
