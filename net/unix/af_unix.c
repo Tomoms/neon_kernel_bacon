@@ -1084,6 +1084,7 @@ static int unix_dgram_connect(struct socket *sock, struct sockaddr *addr,
 	struct net *net = sock_net(sk);
 	struct sockaddr_un *sunaddr = (struct sockaddr_un *)addr;
 	struct sock *other;
+	struct sock *old_peer = unix_peer(sk);
 	unsigned int hash;
 	int err;
 
@@ -1131,7 +1132,6 @@ restart:
 	 * If it was connected, reconnect.
 	 */
 	if (unix_peer(sk)) {
-		struct sock *old_peer = unix_peer(sk);
 		unix_peer(sk) = other;
 		unix_dgram_peer_wake_disconnect_wakeup(sk, old_peer);
 
