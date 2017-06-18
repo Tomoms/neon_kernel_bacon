@@ -6002,7 +6002,7 @@ static int sched_domain_debug_one(struct sched_domain *sd, int cpu, int level,
 {
 	char str[256];
 
-	cpulist_scnprintf(str, sizeof(str), sched_domain_span(sd));
+	scnprintf(str, sizeof(str), "%*pbl", cpumask_pr_args(sched_domain_span(sd)));
 	cpumask_clear(groupmask);
 
 	printk(KERN_DEBUG "%*s domain %d: ", level, "", level);
