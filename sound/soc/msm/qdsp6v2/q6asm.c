@@ -1071,7 +1071,7 @@ int q6asm_audio_client_buf_alloc(unsigned int dir,
 	struct audio_buffer *buf;
 	size_t len;
 
-	if (!(ac) || !(bufsz) || ((dir != IN) && (dir != OUT)))
+	if (!(ac) || !(bufsz) || ((dir != IN) && (dir != OUT))) {
 		pr_err("%s: ac %p dir %d\n", __func__, ac, dir);
 		return -EINVAL;
 	}
