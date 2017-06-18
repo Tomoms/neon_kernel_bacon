@@ -1791,11 +1791,8 @@ static int bq27541_battery_probe(struct i2c_client *client,
 		return -ENODEV;
 
 	/* Get new ID for the new battery device */
-	retval = __idr_pre_get(&battery_id, GFP_KERNEL);
-	if (retval == 0)
-		return -ENOMEM;
 	mutex_lock(&battery_mutex);
-	retval = __idr_get_new_above(&battery_id, client, 0, &num);
+	retval = idr_alloc(&battery_id, client, 0, 0, GFP_KERNEL);
 	mutex_unlock(&battery_mutex);
 	if (retval < 0)
 		return retval;
